@@ -21,11 +21,11 @@ var ubNorthLat = isSemester? 43.001312 : 43.001731, //SU during semester, Common
     ubSouthLat = 42.951134,
     ubSouthLng = -78.812091,
 
-    eccLat = 42.960526,
-    eccLng = -78.721698,
+    eccLat = 42.960258,
+    eccLng = -78.722486,
 
-    medailleLat = 42.928536,
-    medailleLng = -78.855760,
+    medailleLat = 42.928706,
+    medailleLng = -78.856215,
 
     // simply get average because the points are close together
     centerLat = (ubNorthLat + ubSouthLat + eccLat + medailleLat) / 4;

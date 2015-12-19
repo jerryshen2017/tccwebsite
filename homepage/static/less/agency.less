@@ -93,14 +93,26 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: @gray-darkest;
 	border-color: transparent;
 	.navbar-brand {
-		color: lighten(@brand-primary, 20%);
-		.script-font;
+		color: lighten(@brand-primary, 10%);
+		.logo-font;
         &:hover,
         &:focus,
         &:active,
         &.active {
         	color: darken(@brand-primary, 10%);
         }
+	}
+	.subtitle {
+			.script-font;
+			font-size:15px;
+			color: white;
+			text-align: center;
+					&:hover,
+					&:focus,
+					&:active,
+					&.active {
+						color: darken(white, 10%);
+					}
 	}
 	.navbar-collapse {
 		border-color: fade(white, 2%);
@@ -171,7 +183,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 header {
-	background-image: url('../img/bg2.jpg');
+	background-image: url('../img/baptism.jpg');
 	background-repeat: none;
 	background-attachment: scroll;
 	background-position: center center;
@@ -269,7 +281,7 @@ section {
 
 // Portfolio Section
 
-#chapters {
+#campuses {
     .portfolio-item {
         margin: 0 0 15px;
         right: 0;
@@ -333,7 +345,7 @@ section {
 }
 
 @media(min-width:767px) {
-    #portfolio {
+    #campuses {
         .portfolio-item {
             margin: 0 0 30px;
         }
@@ -550,16 +562,6 @@ ul.social-buttons {
 	    min-height: 100%;
 	    padding: 100px 0;
 	    text-align: center;
-/*
-		.carousel-inner > .item > img{
-			width:960px;
-			height:540px;
-     }
-		.carousel{
-			width:960px;
-    	height:540px;
-		}
-		*/
 		h2 {
 	    	margin-bottom: 15px;
 	    	font-size: 3em;
@@ -582,6 +584,15 @@ ul.social-buttons {
 		}
 		img {
 			margin-bottom: 30px;
+		}
+		.table td, .table th {
+		    border: 1px solid lighten(gray, 10%);
+		}
+		.table caption {
+				font-weight: bold;
+		}
+		.table th {
+				text-align: center;
 		}
 	}
 
@@ -624,6 +635,58 @@ ul.social-buttons {
     	opacity: 0;
     	display: none;
     }
+
+		.carousel-fade .carousel-inner .item {
+		  opacity: 0;
+		  transition-property: opacity;
+		}
+
+		.carousel-fade .carousel-inner .active {
+		  opacity: 1;
+		}
+
+		.carousel-fade .carousel-inner .active.left,
+		.carousel-fade .carousel-inner .active.right {
+		  left: 0;
+		  opacity: 0;
+		  z-index: 1;
+		}
+
+		.carousel-fade .carousel-inner .next.left,
+		.carousel-fade .carousel-inner .prev.right {
+		  opacity: 1;
+		}
+
+		.carousel-fade .carousel-control {
+		  z-index: 2;
+		}
+
+		/*
+		WHAT IS NEW IN 3.3: "Added transforms to improve carousel performance in modern browsers."
+		now override the 3.3 new styles for modern browsers & apply opacity
+		*/
+		@media all and (transform-3d), (-webkit-transform-3d) {
+		    .carousel-fade .carousel-inner > .item.next,
+		    .carousel-fade .carousel-inner > .item.active.right {
+		      opacity: 0;
+		      -webkit-transform: translate3d(0, 0, 0);
+		              transform: translate3d(0, 0, 0);
+		    }
+		    .carousel-fade .carousel-inner > .item.prev,
+		    .carousel-fade .carousel-inner > .item.active.left {
+		      opacity: 0;
+		      -webkit-transform: translate3d(0, 0, 0);
+		              transform: translate3d(0, 0, 0);
+		    }
+		    .carousel-fade .carousel-inner > .item.next.left,
+		    .carousel-fade .carousel-inner > .item.prev.right,
+		    .carousel-fade .carousel-inner > .item.active {
+		      opacity: 1;
+		      -webkit-transform: translate3d(0, 0, 0);
+		              transform: translate3d(0, 0, 0);
+		    }
+		}
+
 }
 
 // Highlight Color Customization

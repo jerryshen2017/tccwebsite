@@ -21,8 +21,8 @@ var ubNorthLat = isSemester? 43.001312 : 43.001731, //SU during semester, Common
     ubSouthLat = 42.951134,
     ubSouthLng = -78.812091,
 
-    eccLat = 42.960258,
-    eccLng = -78.722486,
+    eccLat = 42.958399,
+    eccLng = -78.723321,
 
     medailleLat = 42.928706,
     medailleLng = -78.856215,
@@ -30,7 +30,6 @@ var ubNorthLat = isSemester? 43.001312 : 43.001731, //SU during semester, Common
     // simply get average because the points are close together
     centerLat = (ubNorthLat + ubSouthLat + eccLat + medailleLat) / 4;
     centerLng = (ubNorthLng + ubSouthLng + eccLng + medailleLng) / 4;
-
 
     map = new GMaps({
         div: '#map-ubnorth',
@@ -47,6 +46,7 @@ map.addMarker({
     lat: ubNorthLat,
     lng: ubNorthLng,
     title: 'TCC at UB North',
+    label: '1',
     infoWindow: {
         content: '<strong> University at Buffalo - North Campus Chapter <br/> Time: 11:30am <br/> Place: ' + (isSemester? 'Room 330, UB Student Union' : 'Suite 200, UB Commons') + '</strong>'
     }
@@ -55,6 +55,7 @@ map.addMarker({
 map.addMarker({
     lat: ubSouthLat,
     lng: ubSouthLng,
+    label: '2',
     title: 'TCC at UB South',
     infoWindow: {
         content: '<strong> University at Buffalo - South Campus Chapter <br/> Time: 3pm <br/> Place: Veterans Affairs Medical Center on UB South Campus </strong>'
@@ -64,17 +65,21 @@ map.addMarker({
 map.addMarker({
     lat: eccLat,
     lng: eccLng,
+    label: '3',
     title: 'TCC at ECC',
     infoWindow: {
         content: '<strong> Erie Community College Chapter <br/> Time: 3pm <br/> Place: Not specified </strong>'
     }
 });
+var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
 map.addMarker({
     lat: medailleLat,
     lng: medailleLng,
+    label: 4,
+    icon: iconBase + 'schools_maps.png',//TODO
     title: 'TCC at Medaille College',
     infoWindow: {
-        content: '<strong> Medaille College Chapter <br/> Time: 3pm <br/> Place: Not Specified </strong>'
+        content: '<strong> Medaille College Chapter <br/> Time: 3pm <br/> Place: Not LASKDJFSF </strong>'
     }
 });

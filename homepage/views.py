@@ -4,6 +4,7 @@ from django.template import RequestContext, loader
 from django.core.mail import send_mail
 
 from django.views.decorators.clickjacking import xframe_options_exempt
+import smtplib
 
 @xframe_options_exempt
 def index(request):

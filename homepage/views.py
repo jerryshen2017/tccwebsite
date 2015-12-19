@@ -3,11 +3,15 @@ from django.http import HttpResponse
 from django.template import RequestContext, loader
 from django.core.mail import send_mail
 
+from django.views.decorators.clickjacking import xframe_options_exempt
+
+@xframe_options_exempt
 def index(request):
     template = loader.get_template('homepage/index.html')
     context = RequestContext(request, {})
     return HttpResponse(template.render(context))
 
+@xframe_options_exempt
 def email(request):
     print ("kqwjrlqk")
     print (request)

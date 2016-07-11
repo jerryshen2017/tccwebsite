@@ -10,6 +10,7 @@ var isFallSemester = fallStart <= today && today <= fallEnd;
 var isSpringSemester = springStart <= today && today <= springEnd;
 
 var isSemester = isFallSemester || isSpringSemester;
+var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
 
 var grayScale = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
@@ -46,40 +47,42 @@ map.addMarker({
     lat: ubNorthLat,
     lng: ubNorthLng,
     title: 'TCC at UB North',
-    label: '1',
+    icon: iconBase + 'schools_maps.png',
+    // label: '1',
     infoWindow: {
-        content: '<strong> University at Buffalo - North Campus Chapter <br/> Time: 11:30am <br/> Place: ' + (isSemester? 'Room 330, UB Student Union' : 'Suite 200, UB Commons') + '</strong>'
+        content: '<strong> University at Buffalo - North Campus Chapter <br/> Time: 11:30am <br/> Place: Room 330, UB Student Union (Suite 200, UB Commons in school breaks) </strong>'
     }
 });
 
 map.addMarker({
     lat: ubSouthLat,
     lng: ubSouthLng,
-    label: '2',
+    // label: '2',
+    icon: iconBase + 'schools_maps.png',
     title: 'TCC at UB South',
     infoWindow: {
-        content: '<strong> University at Buffalo - South Campus Chapter <br/> Time: 3pm <br/> Place: Veterans Affairs Medical Center on UB South Campus </strong>'
+        content: '<strong> University at Buffalo - South Campus Chapter <br/> Time: 3pm <br/> Place: Harriman Hall 105 (Diefendorf 103 in school breaks) </strong>'
     }
 });
 
 map.addMarker({
     lat: eccLat,
     lng: eccLng,
-    label: '3',
+    // label: '3',
+    icon: iconBase + 'schools_maps.png',
     title: 'TCC at ECC',
     infoWindow: {
-        content: '<strong> Erie Community College Chapter <br/> Time: 3pm <br/> Place: Not specified </strong>'
+        content: '<strong> Erie Community College Chapter <br/> Join Sunday services at UB </strong>'
     }
 });
-var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
 
 map.addMarker({
     lat: medailleLat,
     lng: medailleLng,
-    label: 4,
-    icon: iconBase + 'schools_maps.png',//TODO
+    // label: '4',
+    icon: iconBase + 'schools_maps.png',
     title: 'TCC at Medaille College',
     infoWindow: {
-        content: '<strong> Medaille College Chapter <br/> Time: 3pm <br/> Place: Not LASKDJFSF </strong>'
+        content: '<strong> Medaille College Chapter <br/> Join Sunday services at UB </strong>'
     }
 });
